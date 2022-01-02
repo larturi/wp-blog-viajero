@@ -6,7 +6,7 @@
 <!--=====================================
 CONTENIDO BLOG
 ======================================-->
-<div class="container-fluid bg-white contenidoInicio py-2 py-md-4">
+<div class="container-fluid bg-white contenido py-2 py-md-4">
 	
 	<div class="container">
 
@@ -37,260 +37,265 @@ CONTENIDO BLOG
 			<!-- COLUMNA IZQUIERDA -->
 
 			<div class="col-12 col-md-8 col-lg-9 p-0 pr-lg-5">
-				
-				<!-- ARTÍCULO 01 -->
 
-				<div class="container">
+				<?php 
+                    if ( have_posts() ) : 
+                        while ( have_posts() ) : the_post(); 
+                ?>
 
-					<div class="d-flex">
-					
-						<div class="fechaArticulo">30.09.2018</div>
+					<div class="container">
 
-						<h3 class="tituloArticulo text-right text-muted pl-3 pt-lg-2">Type something here lorem</h3>
+						<div class="d-flex">
 
-					</div>
+							<div class="fechaArticulo"><?php echo the_date('d.m.Y'); ?></div>
 
-					<img src="img/articulo.png" alt="Lorem ipsum dolor sit amet" class="img-fluid my-lg-3">
+							<h3 class="tituloArticulo text-right text-muted pl-3 pt-lg-2"><?php the_title(); ?></h3>
 
-					<p class="textoArticulo my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid laboriosam suscipit magnam distinctio nisi eaque expedita beatae neque nobis dolores corporis laudantium quo voluptatum facilis, aliquam sed deleniti delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores laborum facere est eos in optio suscipit, consequatur animi placeat adipisci, sunt. Unde distinctio odit, facilis quos eveniet et culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, minus distinctio assumenda porro fugit voluptates officiis atque? Voluptas, soluta eius inventore aspernatur quasi, earum iste maiores porro ipsam, expedita minus.</p>
+						</div>
 
-					<!-- PUBLICIDAD -->
+						<img src="<?php echo get_template_directory_uri() . '/img/articulo.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid my-lg-3">
 
-					<img src="img/ad04.png" class="img-fluid my-3" width="100%">
+						<p class="textoArticulo my-3">
+							<?php the_content(); ?>						
+						</p>
 
-					<p class="textoArticulo my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid laboriosam suscipit magnam distinctio nisi eaque expedita beatae neque nobis dolores corporis laudantium quo voluptatum facilis, aliquam sed deleniti delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores laborum facere est eos in optio suscipit, consequatur animi placeat adipisci, sunt. Unde distinctio odit, facilis quos eveniet et culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, minus distinctio assumenda porro fugit voluptates officiis atque? Voluptas, soluta eius inventore aspernatur quasi, earum iste maiores porro ipsam, expedita minus.</p>
+						<!-- COMPARTIR EN REDES -->
 
-					<p class="textoArticulo my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid laboriosam suscipit magnam distinctio nisi eaque expedita beatae neque nobis dolores corporis laudantium quo voluptatum facilis, aliquam sed deleniti delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores laborum facere est eos in optio suscipit, consequatur animi placeat adipisci, sunt. Unde distinctio odit, facilis quos eveniet et culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, minus distinctio assumenda porro fugit voluptates officiis atque? Voluptas, soluta eius inventore aspernatur quasi, earum iste maiores porro ipsam, expedita minus.</p>
-
-					<!-- COMPARTIR EN REDES -->
-
-					<div class="float-right my-3 btnCompartir">
-						
-						<div class="btn-group">
+						<div class="float-right my-3 btnCompartir">
 							
-							<button type="button" class="btn border-0 text-white" style="background: #1475E0">
+							<div class="btn-group">
 								
-								<span class="fab fa-facebook pr-1"></span>
+								<button type="button" class="btn border-0 text-white" style="background: #1475E0">
+									
+									<span class="fab fa-facebook pr-1"></span>
 
-								Facebook
+									Facebook
 
-								<span class="lead pl-1">3</span>
+									<span class="lead pl-1">3</span>
 
-							</button>
+								</button>
 
-						</div>
+							</div>
 
-						<div class="btn-group">
-							
-							<button type="button" class="btn border-0 text-white" style="background: #00A6FF">
+							<div class="btn-group">
 								
-								<span class="fab fa-twitter pr-1"></span>
+								<button type="button" class="btn border-0 text-white" style="background: #00A6FF">
+									
+									<span class="fab fa-twitter pr-1"></span>
 
-								Twitter
+									Twitter
 
-								<span class="lead pl-1">3</span>
+									<span class="lead pl-1">3</span>
 
-							</button>
+								</button>
 
-						</div>
+							</div>
 
-						<div class="btn-group">
-							
-							<button type="button" class="btn border-0 text-white" style="background: #DD4D41">
+							<div class="btn-group">
 								
-								<span class="fab fa-google-plus pr-1"></span>
+								<button type="button" class="btn border-0 text-white" style="background: #DD4D41">
+									
+									<span class="fab fa-google-plus pr-1"></span>
 
-								Google
+									Google
 
-								<span class="lead pl-1">3</span>
+									<span class="lead pl-1">3</span>
 
-							</button>
+								</button>
+
+							</div>
 
 						</div>
 
-					</div>
+						<!-- AVANZAR - RETROCEDER -->
 
-					<!-- AVANZAR - RETROCEDER -->
+						<div class="clearfix"></div>
 
-					<div class="clearfix"></div>
-
-				 	<div class="d-md-flex justify-content-between my-3 d-none">
-					    
-					    <a href="articulos.html">Leer artículo anterior</a>
-					    
-					    <a href="articulos.html">Leer artículo siguiente</a>
-
-				  	</div>
-
-				  	<!-- DESLIZADOR DE ARTÍCULOS -->
-
-				  	<section class="jd-slider deslizadorArticulos my-4">
-				  		
-						<div class="slide-inner">
+						<div class="d-md-flex justify-content-between my-3 d-none">
 							
-							<ul class="slide-area">
+							<a href="articulos.html">Leer artículo anterior</a>
+							
+							<a href="articulos.html">Leer artículo siguiente</a>
+
+						</div>
+
+						<!-- DESLIZADOR DE ARTÍCULOS -->
+
+						<section class="jd-slider deslizadorArticulos my-4">
+							
+							<div class="slide-inner">
 								
-								<li class="px-3">
+								<ul class="slide-area">
 									
-									<a href="articulos.html" class="text-secondary">
+									<li class="px-3">
+										
+										<a href="articulos.html" class="text-secondary">
 
-										<img src="img/articulo01.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
-										<h6 class="py-2">Type something here</h6>
+											<h6 class="py-2">Type something here</h6>
 
-									</a>
+										</a>
 
-									 <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
+										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
 
-								</li>
+									</li>
 
-								<li class="px-3">
-									
-									<a href="articulos.html" class="text-secondary">
+									<li class="px-3">
+										
+										<a href="articulos.html" class="text-secondary">
 
-										<img src="img/articulo02.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-									
-										<h6 class="py-2">Type something here</h6>
+											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
-									</a>
+											<h6 class="py-2">Type something here</h6>
 
-									<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
+										</a>
 
-								</li>
+										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
 
-								<li class="px-3">
-									
-									<a href="articulos.html" class="text-secondary">
+									</li>
 
-										<img src="img/articulo03.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-									
-										<h6 class="py-2">Type something here</h6>
+									<li class="px-3">
+										
+										<a href="articulos.html" class="text-secondary">
 
-									</a>
+											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
-									<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
+											<h6 class="py-2">Type something here</h6>
 
-								</li>
+										</a>
 
-								<li class="px-3">
-									
-									<a href="articulos.html" class="text-secondary">
+										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
 
-										<img src="img/articulo04.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-									
-										<h6 class="py-2">Type something here</h6>
+									</li>
 
-									</a>
+									<li class="px-3">
+										
+										<a href="articulos.html" class="text-secondary">
 
-									<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
+											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
-								</li>
+											<h6 class="py-2">Type something here</h6>
 
-							</ul>
+										</a>
 
-							<a class="prev" href="#">
+										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
 
-				                <i class="fas fa-angle-left text-muted"></i>
+									</li>
 
-				            </a>
+								</ul>
 
-				            <a class="next" href="#">
+								<a class="prev" href="#">
 
-				                <i class="fas fa-angle-right text-muted"></i>
+									<i class="fas fa-angle-left text-muted"></i>
 
-				            </a>
+								</a>
 
-						</div>
+								<a class="next" href="#">
 
-						 <div class="controller">
+									<i class="fas fa-angle-right text-muted"></i>
 
-				            <div class="indicate-area"></div>
+								</a>
 
-				        </div>
+							</div>
 
-				  	</section>
+							<div class="controller">
 
-				  	<!-- BLOQUE DE OPINIONES -->
+								<div class="indicate-area"></div>
 
-				  	<h3 style="color:#8e4876">Opiniones</h3>
+							</div>
 
-				  	<hr style="border: 1px solid #79FF39">
-					
-					<div class="row opiniones">
-						
-						<div class="col-3 col-sm-4 col-lg-2 p-2">
-						
-							<img src="img/user01.jpg" class="img-thumbnail">	
+						</section>
 
-						</div>
+						<!-- BLOQUE DE OPINIONES -->
 
-						<div class="col-9 col-sm-8 col-lg-10 p-2 text-muted">
+						<h3 style="color:#8e4876">Opiniones</h3>
+
+						<hr style="border: 1px solid #79FF39">
+
+						<div class="row opiniones">
 							
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae, aut sint provident dolorem minus recusandae facere, ipsum magnam, nostrum enim. Error quasi quod ab consectetur explicabo consequuntur obcaecati suscipit!</p>
-
-							<span class="small float-right">Carla Gómez | 20.09.2018</span>
-
-						</div>	
-
-						<div class="col-9 col-sm-8 col-lg-10 p-2 text-muted">
+							<div class="col-3 col-sm-4 col-lg-2 p-2">
 							
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae, aut sint provident dolorem minus recusandae facere, ipsum magnam, nostrum enim. Error quasi quod ab consectetur explicabo consequuntur obcaecati suscipit!</p>
+								<img src="<?php echo get_template_directory_uri() . '/img/user01.jpg'; ?>" class="img-thumbnail">	
 
-							<span class="small float-right">Juanito Travel | 20.09.2018</span>
+							</div>
 
-						</div>
-
-						<div class="col-3 col-sm-4 col-lg-2 p-2">
-						
-							<img src="img/user02.jpg" class="img-thumbnail">	
-
-						</div>
-
-					</div>
-
-					<hr style="border: 1px solid #79FF39">
-
-					<!-- FORMULARIO DE OPINIONES -->
-					
-					<form>
-						
-						<label class="text-muted lead">¿Qué tal te pareció el artículo?</label>
-
-						<div class="row">
-							
-							<div class="col-12 col-md-8 col-lg-9">
+							<div class="col-9 col-sm-8 col-lg-10 p-2 text-muted">
 								
-								<div class="input-group-lg">
-									
-									<input type="text" class="form-control my-3" placeholder="Tu nombre">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae, aut sint provident dolorem minus recusandae facere, ipsum magnam, nostrum enim. Error quasi quod ab consectetur explicabo consequuntur obcaecati suscipit!</p>
 
-									<input type="email" class="form-control my-3" placeholder="Tu email">
+								<span class="small float-right">Carla Gómez | 20.09.2018</span>
+
+							</div>	
+
+							<div class="col-9 col-sm-8 col-lg-10 p-2 text-muted">
+								
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae, aut sint provident dolorem minus recusandae facere, ipsum magnam, nostrum enim. Error quasi quod ab consectetur explicabo consequuntur obcaecati suscipit!</p>
+
+								<span class="small float-right">Juanito Travel | 20.09.2018</span>
+
+							</div>
+
+							<div class="col-3 col-sm-4 col-lg-2 p-2">
+							
+								<img src="<?php echo get_template_directory_uri() . '/img/user02.jpg'; ?>" class="img-thumbnail">	
+
+							</div>
+
+						</div>
+
+						<hr style="border: 1px solid #79FF39">
+
+						<!-- FORMULARIO DE OPINIONES -->
+
+						<form>
+							
+							<label class="text-muted lead">¿Qué tal te pareció el artículo?</label>
+
+							<div class="row">
+								
+								<div class="col-12 col-md-8 col-lg-9">
+									
+									<div class="input-group-lg">
+										
+										<input type="text" class="form-control my-3" placeholder="Tu nombre">
+
+										<input type="email" class="form-control my-3" placeholder="Tu email">
+
+									</div>
 
 								</div>
 
-							</div>
+								<div class="d-none d-md-block col-md-4 col-lg-3">
+									
+									<img src="<?php echo get_template_directory_uri() . '/img/subirFoto.png'; ?>" class="img-fluid mt-md-3 mt-xl-2">
 
-							<div class="d-none d-md-block col-md-4 col-lg-3">
-								
-								<img src="img/subirFoto.png" class="img-fluid mt-md-3 mt-xl-2">
+								</div>
 
-							</div>
+							</div>	
 
-						</div>	
+							<textarea class="form-control my-3" rows="7" placeholder="Escribe aquí tu mensaje"></textarea>
+							
+							<input type="submit" class="btn btn-dark btn-lg btn-block" value="Enviar">
 
-						<textarea class="form-control my-3" rows="7" placeholder="Escribe aquí tu mensaje"></textarea>
-						
-						<input type="submit" class="btn btn-dark btn-lg btn-block" value="Enviar">
+						</form>
 
-					</form>
+						<!-- PUBLICIDAD -->
 
-					<!-- PUBLICIDAD -->
-
-					<img src="img/ad01.jpg" class="img-fluid my-3 d-block d-md-none" width="100%">
+						<img src="<?php echo get_template_directory_uri() . '/img/ad01.jpg'; ?>" class="img-fluid my-3 d-block d-md-none" width="100%">
 
 
-				</div>
+					</div>
 
+
+
+				<?php
+                        endwhile; 
+                    endif; 
+                ?>
+				
+				
 			</div>
 
 

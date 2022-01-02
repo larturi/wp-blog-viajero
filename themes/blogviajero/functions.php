@@ -37,5 +37,7 @@ function blogviajero_setup() {
         $atts['class'] = $class;
         return $atts;
     }
+
+    add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'blogviajero_setup');
