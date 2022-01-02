@@ -99,7 +99,7 @@ CONTENIDO BLOG
 
 				<div class="d-block d-lg-none">
 					
-					<img src="img/ad02.jpg" class="img-fluid" width="100%">
+					<img src="<?php echo get_template_directory_uri() . '/img/ad02.jpg'; ?>" class="img-fluid" width="100%">
 
 				</div>
 

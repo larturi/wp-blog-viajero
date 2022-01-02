@@ -89,7 +89,7 @@ CONTENIDO BLOG
                             <h5 class="d-block d-lg-none py-3">Type something here</h5>
                         </a>
 
-                        <a href="articulos.html"><img src="img/articulo01.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%"></a>
+                        <a href="articulos.html"><img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%"></a>
 
                     </div>
 
@@ -126,7 +126,7 @@ CONTENIDO BLOG
 
                         <a href="articulos.html">
 
-                            <img src="img/articulo02.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
+                            <img src="<?php echo get_template_directory_uri() . '/img/articulo02.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
 
                         </a>
 
@@ -156,7 +156,7 @@ CONTENIDO BLOG
 
                 <div class="d-block d-lg-none">
 
-                    <img src="img/ad02.jpg" class="img-fluid" width="100%">
+                    <img src="<?php echo get_template_directory_uri() . '/img/ad02.jpg'; ?>" class="img-fluid" width="100%">
 
                 </div>
 
@@ -174,7 +174,7 @@ CONTENIDO BLOG
 
                         <a href="articulos.html">
 
-                            <img src="img/articulo03.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
+                            <img src="<?php echo get_template_directory_uri() . '/img/articulo03.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
 
                         </a>
 
@@ -214,7 +214,7 @@ CONTENIDO BLOG
 
                         <a href="articulos.html">
 
-                            <img src="img/articulo04.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
+                            <img src="<?php echo get_template_directory_uri() . '/img/articulo04.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
 
                         </a>
 
@@ -254,7 +254,7 @@ CONTENIDO BLOG
 
                         <a href="articulos.html">
 
-                            <img src="img/articulo05.png" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
+                            <img src="<?php echo get_template_directory_uri() . '/img/articulo05.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid" width="100%">
 
                         </a>
 

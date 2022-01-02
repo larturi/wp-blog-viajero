@@ -7,58 +7,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Juanito Travel</title>
+    <title>Travel Blog</title>
 
-    <link rel="icon" href="img/icono.jpg">
+    <link rel="icon" href="<?php echo get_template_directory_uri() . '/img/icono.jpg'; ?>">
 
-    <!--=====================================
-	PLUGINS DE CSS
-	======================================-->
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Chewy|Open+Sans:300,400" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-
-    <!-- JdSlider -->
-    <!-- https://www.jqueryscript.net/slider/Carousel-Slideshow-jdSlider.html -->
-    <link rel="stylesheet" href="css/plugins/jquery.jdSlider.css">
-
-    <link rel="stylesheet" href="css/style.min.css">
-
-    <!--=====================================
-	PLUGINS DE JS
-	======================================-->
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-    <!-- JdSlider -->
-    <!-- https://www.jqueryscript.net/slider/Carousel-Slideshow-jdSlider.html -->
-    <script src="js/plugins/jquery.jdSlider-latest.js"></script>
-
-    <!-- pagination -->
-    <!-- http://josecebe.github.io/twbs-pagination/ -->
-    <script src="js/plugins/pagination.min.js"></script>
-
-    <!-- scrollorama -->
-    <!-- http://johnpolacek.github.io/superscrollorama/ -->
-    <script src="js/plugins/jquery.superscrollorama.js"></script>
-    <script src="js/plugins/TweenMax.min.js"></script>
-
-    <!-- scrollup -->
-    <!-- https://markgoodyear.com/labs/scrollup/ -->
-    <!-- https://easings.net/es# -->
-    <script src="js/plugins/scrollUP.js"></script>
-    <script src="js/plugins/jquery.easing.js"></script>
+    <?php wp_head(); ?>
 
 </head>
 
@@ -97,7 +50,7 @@ CABECERA
 
                     <a href="index.html">
 
-                        <img src="img/logotipo-negativo.png" alt="Logo de Juanito Travel" class="img-fluid logotipo">
+                        <img src="<?php echo get_template_directory_uri() . '/img/logotipo-negativo.png'; ?>" alt="Logo de Juanito Travel" class="img-fluid logotipo">
 
                     </a>
 

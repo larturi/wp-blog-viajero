@@ -11,25 +11,25 @@ BANNER
 
             <li>
 
-                <img src="img/banner01.jpg" alt="Juanito Travel en el mar" class="img-fluid">
+                <img src="<?php echo get_template_directory_uri() . '/img/banner01.jpg'; ?>" alt="Juanito Travel en el mar" class="img-fluid">
 
             </li>
 
             <li>
 
-                <img src="img/banner02.jpg" alt="Juanito Travel en el mar" class="img-fluid">
+                <img src="<?php echo get_template_directory_uri() . '/img/banner02.jpg'; ?>" alt="Juanito Travel en el mar" class="img-fluid">
 
             </li>
 
             <li>
 
-                <img src="img/banner03.jpg" alt="Juanito Travel en el mar" class="img-fluid">
+                <img src="<?php echo get_template_directory_uri() . '/img/banner03.jpg'; ?>" alt="Juanito Travel en el mar" class="img-fluid">
 
             </li>
 
             <li>
 
-                <img src="img/banner04.jpg" alt="Juanito Travel en el mar" class="img-fluid">
+                <img src="<?php echo get_template_directory_uri() . '/img/banner04.jpg'; ?>" alt="Juanito Travel en el mar" class="img-fluid">
 
             </li>
 

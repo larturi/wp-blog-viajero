@@ -8,7 +8,7 @@
 
         <h4>Sobre Mi</h4>
 
-        <img src="img/sobreMi.jpg" alt="Lorem ipsum dolor sit amet" class="img-fluid my-1">
+        <img src="<?php echo get_template_directory_uri() . '/img/sobreMi.jpg'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid my-1">
 
         <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum odio, eos architecto atque numquam alias laboriosam minima beatae consectetur.</p>
 
@@ -18,7 +18,7 @@
 
     <div class="my-4">
 
-        <img src="img/ad01.jpg" class="img-fluid">
+        <img src="<?php echo get_template_directory_uri() . '/img/ad01.jpg'; ?>" class="img-fluid">
 
     </div>
 
@@ -34,7 +34,7 @@
 
                 <a href="articulos.html">
 
-                    <img src="img/com01.jpg" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/img/com01.jpg'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                 </a>
 
@@ -58,7 +58,7 @@
 
                 <a href="articulos.html">
 
-                    <img src="img/com02.jpg" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/img/com02.jpg'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                 </a>
 
@@ -82,7 +82,7 @@
 
                 <a href="articulos.html">
 
-                    <img src="img/com03.jpg" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                    <img src="<?php echo get_template_directory_uri() . '/img/com03.jpg'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                 </a>
 
@@ -107,13 +107,13 @@
 
     <div class="my-4">
 
-        <img src="img/ad02.jpg" class="img-fluid">
+        <img src="<?php echo get_template_directory_uri() . '/img/ad02.jpg'; ?>" class="img-fluid">
 
     </div>
 
     <div class="my-4">
 
-        <img src="img/ad05.png" class="img-fluid">
+        <img src="<?php echo get_template_directory_uri() . '/img/ad02.jpg'; ?>" class="img-fluid">
 
     </div>
 

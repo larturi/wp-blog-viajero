@@ -134,8 +134,7 @@ FOOTER
 
 </footer>
 
-<script src="js/script.min.js"></script>
-
+<?php wp_footer(); ?>
 
 </body>
 
