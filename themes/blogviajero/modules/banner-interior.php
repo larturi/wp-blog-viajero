@@ -19,7 +19,7 @@ BANNER
 
 				</div>
 				
-				<img src="img/bannerGrande01.jpg" alt="Juanito Travel en el mar" class="img-fluid">
+				<img src="<?php echo get_template_directory_uri() . '/img/bannerGrande01.jpg'; ?>" alt="Juanito Travel en el mar" class="img-fluid">
 
 			</li>		
 

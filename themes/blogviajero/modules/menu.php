@@ -3,52 +3,16 @@ MENU
 ======================================-->
 <div class="container-fluid menu">
 
-    <a href="#" class="btnClose">X</a>
+    <div class="btnClose">X</div>
 
-    <ul class="nav flex-column text-center">
-
-        <li class="nav-item">
-
-            <a class="nav-link text-white" href="categorias.html">Mi viaje por Suramérica</a>
-
-        </li>
-
-        <li class="nav-item">
-
-            <a class="nav-link text-white" href="categorias.html">Mi viaje por Centroamérica</a>
-
-        </li>
-
-        <li class="nav-item">
-
-            <a class="nav-link text-white" href="categorias.html">Mi viaje por Norteamérica</a>
-
-        </li>
-
-        <li class="nav-item">
-
-            <a class="nav-link text-white" href="categorias.html">Mi viaje por Europa</a>
-
-        </li>
-
-        <li class="nav-item">
-
-            <a class="nav-link text-white" href="categorias.html">Mi viaje por Asia</a>
-
-        </li>
-
-        <li class="nav-item">
-
-            <a class="nav-link text-white" href="categorias.html">Mi viaje por Africa</a>
-
-        </li>
-
-        <li class="nav-item">
-
-            <a class="nav-link text-white" href="categorias.html">Mi viaje por Oceanía</a>
-
-        </li>
-
-    </ul>
+    <?php 
+        wp_nav_menu(array(
+            "theme_location" => "header-menu",
+            "container" => "div",
+            "container_class" => "menu-content",
+            "items_wrap" => '<ul class="nav flex-column text-center">%3$s</ul>',
+            "menu_class" => "nav-item",
+        ));
+    ?>
 
 </div>

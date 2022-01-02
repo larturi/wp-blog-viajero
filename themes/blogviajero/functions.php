@@ -1,5 +1,6 @@
 <?php
 
+// Includes css y js
 function blogviajero_includes() {
     // CSS
     wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', array(), '4.1.3', 'all');
@@ -21,3 +22,20 @@ function blogviajero_includes() {
     wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'blogviajero_includes');
+
+// Funciones para agregar al administrador
+// https://developer.wordpress.org/themes/basics/theme-functions/
+function blogviajero_setup() {
+    register_nav_menus(array(
+        'header-menu'   => __( 'Header Menu', 'blogviajero' )
+    ));
+
+    add_filter('nav_menu_link_attributes', 'agregarClases', 10, 3); 
+
+    function agregarClases($atts, $item, $args) {
+        $class = 'nav-link text-white';
+        $atts['class'] = $class;
+        return $atts;
+    }
+}
+add_action('after_setup_theme', 'blogviajero_setup');
