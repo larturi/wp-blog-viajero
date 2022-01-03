@@ -14,9 +14,15 @@ CONTENIDO BLOG
 
 		<ul class="breadcrumb bg-white p-0 mb-2 mb-md-4">
 
-			<li class="breadcrumb-item inicio"><a href="index.html">Inicio</a></li>
+			<li class="breadcrumb-item inicio"><a href="<?php echo esc_url(home_url("/")); ?>">Inicio</a></li>
 
-			<li class="breadcrumb-item active">Mi viaje por Suramérica</li>
+			<?php
+				$cat = get_query_var('cat');
+				$categoryName = get_category($cat)->name;
+				$categoryLink = get_category_link($cat);
+			?>
+
+			<li class="breadcrumb-item active"><?php echo $categoryName; ?></li>
 
 		</ul>
 		
@@ -35,7 +41,7 @@ CONTENIDO BLOG
 
 					<div class="col-12 col-lg-5">
 
-						<a href="articulos.html">
+						<a href=<?php the_permalink(); ?>">
 							<h5 class="d-block d-lg-none py-3"><?php the_title(); ?></h5>
 						</a>
 
@@ -53,7 +59,7 @@ CONTENIDO BLOG
 
 						<p class="my-2 my-lg-5"><?php the_excerpt(); ?></p>
 
-						<a href="articulos.html" class="float-right">Leer Más</a>
+						<a href="<?php the_permalink(); ?>" class="float-right">Leer Más</a>
 
 						<div class="fecha"><?php the_time('d.m.Y'); ?></div>
 

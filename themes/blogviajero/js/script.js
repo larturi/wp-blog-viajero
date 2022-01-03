@@ -93,16 +93,21 @@ $(".grid figure, .gridFooter figure").click(function(){
 /*=============================================
 PAGINACIÓN
 =============================================*/
+$(".pagination .page-numbers").before('<li class="page-item">');
 
-$(".pagination").twbsPagination({
-	totalPages: 10,
-	visiblePages: 4,
-	first: "Primero",
-	last: "Último",
-	prev: '<i class="fas fa-angle-left"></i>',
-	next: '<i class="fas fa-angle-right"></i>'
+var pageNumber = $(".pagination .page-numbers");
+var pageItem = $(".pagination .page-item");
 
-});
+for(var i = 0; i < pageItem.length; i++){
+	$(pageNumber[i]).appendTo($(pageItem[i]));
+	$(pageNumber[i]).addClass("page-link");
+}
+
+$(".pagination .page-numbers.current").parent().addClass("active");
+$(".pagination .page-numbers.next").html('<i class="fas fa-angle-right"></i>');
+$(".pagination .page-numbers.prev").html('<i class="fas fa-angle-left"></i>');
+
+
 
 /*=============================================
 SCROLLORAMA
@@ -194,12 +199,30 @@ function preload(i, item){
 /*=============================================
 DESLIZADOR DE ARTÍCULOS
 =============================================*/
+var longitudDeslizador = $(".deslizadorArticulos .slide-area li").length;
+var slideShow = 1;
+var slideToScroll = 1;
 
+if(longitudDeslizador > 3){
+
+	slideShow = 3;
+	slideToScroll = 3;
+
+}else if(longitudDeslizador > 2 && longitudDeslizador == 3){
+
+	slideShow = 2;
+	slideToScroll = 2;
+
+}else{
+
+	slideShow = 1;
+	slideToScroll = 1;
+}
 
 $(".deslizadorArticulos").jdSlider({
 	wrap: ".slide-inner",
-	slideShow: 3,
-	slideToScroll:3,
+	slideShow: slideShow,
+	slideToScroll: slideToScroll,
 	isLoop: true,
 	responsive: [{
 		viewSize: 320,

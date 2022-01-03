@@ -10,9 +10,17 @@ CONTENIDO BLOG
 	
 	<div class="container">
 
+		<?php
+			global $post;
+			$categoryId = get_the_category($post->ID);
+			$categoryName = get_category($categoryId[0]->cat_ID)->name;
+			$categorySlug = get_category($categoryId[0]->cat_ID)->slug;
+			$categoryLink = get_category_link($categoryId[0]->cat_ID);
+		?>
+
 		<!-- BREADCRUMB -->
 
-		<a href="categorias.html">
+		<a href="<?php echo $categoryLink; ?>">
 			
 			<button class="d-block d-sm-none btn btn-info btn-sm mb-2">
 			
@@ -24,9 +32,9 @@ CONTENIDO BLOG
 
 		<ul class="breadcrumb bg-white p-0 mb-2 mb-md-4 breadArticulo">
 
-			<li class="breadcrumb-item inicio"><a href="index.html">Inicio</a></li>
+			<li class="breadcrumb-item inicio"><a href="<?php echo esc_url(home_url("/")); ?>">Inicio</a></li>
 
-			<li class="breadcrumb-item"><a href="categorias.html">Mi viaje por Suramérica</a></li>
+			<li class="breadcrumb-item"><a href="<?php echo $categoryLink; ?>"><?php echo $categoryName; ?></a></li>
 
 			<li class="breadcrumb-item active">Type something here</li>
 
@@ -113,9 +121,10 @@ CONTENIDO BLOG
 
 						<div class="d-md-flex justify-content-between my-3 d-none">
 							
-							<a href="articulos.html">Leer artículo anterior</a>
-							
-							<a href="articulos.html">Leer artículo siguiente</a>
+						<?php 
+							previous_post_link('%link', 'Leer artículo anterior');
+							next_post_link('%link', 'Leer artículo siguiente'); 
+						?>
 
 						</div>
 
@@ -126,62 +135,23 @@ CONTENIDO BLOG
 							<div class="slide-inner">
 								
 								<ul class="slide-area">
-									
-									<li class="px-3">
-										
-										<a href="articulos.html" class="text-secondary">
 
-											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+									<?php $secondary_query = new WP_Query( 'category_name='.$categorySlug ); ?>
 
-											<h6 class="py-2">Type something here</h6>
+									<?php while ( $secondary_query->have_posts() ):$secondary_query->the_post(); ?>
 
-										</a>
+										<li class="px-3">
+											
+											<a href="<?php the_permalink(); ?>" class="text-secondary">
+												<?php the_post_thumbnail( 'post-thumbnails', array( 'class' => 'img-fluid' )); ?>
+												<h6 class="py-2"><?php the_title(); ?></h6>
+											</a>
 
-										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
+											<small><?php the_excerpt(); ?></small>
 
-									</li>
+										</li>
 
-									<li class="px-3">
-										
-										<a href="articulos.html" class="text-secondary">
-
-											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-
-											<h6 class="py-2">Type something here</h6>
-
-										</a>
-
-										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
-
-									</li>
-
-									<li class="px-3">
-										
-										<a href="articulos.html" class="text-secondary">
-
-											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-
-											<h6 class="py-2">Type something here</h6>
-
-										</a>
-
-										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
-
-									</li>
-
-									<li class="px-3">
-										
-										<a href="articulos.html" class="text-secondary">
-
-											<img src="<?php echo get_template_directory_uri() . '/img/articulo01.png'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-
-											<h6 class="py-2">Type something here</h6>
-
-										</a>
-
-										<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quibusdam sint porro...</p>
-
-									</li>
+									<?php endwhile; ?>	
 
 								</ul>
 

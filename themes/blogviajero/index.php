@@ -121,6 +121,13 @@ CONTENIDO BLOG
                     endif; 
                 ?>
 
+                <!-- PAGINACION -->
+                <div class="container d-none d-md-block">
+					<ul class="pagination justify-content-center">
+						<?php echo paginate_links(); ?>
+					</ul>
+				</div>
+
                 <!-- PUBLICIDAD -->
 
                 <div class="d-block d-lg-none">
