@@ -235,4 +235,75 @@ $(".deslizadorArticulos").jdSlider({
 
 })
 
+/*=============================================
+FORMULARIO COMENTARIOS
+=============================================*/
+$('.comment-notes').hide();
+$('.comment-reply-title').html('');
+$('.comment-reply-title').append('<label class="text-muted lead">¿Qué tal te pareció el artículo?</label>');
+$('p[class*="comment"] label, .comment-form-url').hide();
+$('p[class*="comment"] input, p[class*="comment"] textarea').css({
+	'width': '100%',
+	'border-radius': '3px',
+	'padding': '22px',
+});
+$('p[class*="comment"] input, p[class*="comment"] textarea').addClass('form-control');
 
+
+$('#email').attr('placeholder', 'Correo electrónico');
+$('#author').attr('placeholder', 'Tu nombre');
+$('#comment').attr('placeholder', 'Escribe aqui tu comentario');
+
+$('#submit').attr('class', 'btn btn-dark btn-block');
+$('#submit').attr('value', 'Enviar');
+
+$('#wp-comment-cookies-consent').hide();
+
+$('#commentform').attr('class', 'd-flex flex-column');
+$('.comment-form-author').addClass('order-1');
+$('.comment-form-email').addClass('order-2');
+$('.comment-form-comment').addClass('order-3');
+$('.form-submit').addClass('order-4');
+
+/*=============================================
+VISTA COMENTARIOS
+=============================================*/
+
+var avatar = $(".avatar");
+var nombre = $(".comment-author cite");
+var fecha = $(".comment-meta a");
+var comentario = $(".comment-body p");
+var vcard = $(".vcard");
+
+$(".comment-author cite, .comment-author span").hide();
+$(".comment-meta a").hide();
+$(".comment").attr('class', 'comment d-flex flex-column');
+$(".comment-body").addClass('d-flex');
+
+$(".vcard").addClass("order-1");
+$(".vcard").css({"width":"250px"});
+$(".comment-body p").addClass("order-2");
+$(".comment-body p").addClass("flex-fill");
+
+$(".children .vcard").addClass("order-3");
+$(".children .comment-body p").addClass("order-1");
+
+$(".comment-author").css({"padding":"5px"});
+$(".comment-body p").css({"padding":"5px 20px"});
+
+$(".children .comment-body p").css({"text-align":"right"});
+$(".children .comment-body p span").css({"font-size":"12px"});
+
+$(".comment-author .avatar").addClass("order-1");
+$(".comment-author cite, .comment-author span").addClass("order-3");
+
+for(var i = 0; i < avatar.length; i++){
+	$(avatar[i]).addClass("img-thumbnail");
+	$(avatar[i]).css({"width":"100%"});
+	$(avatar[i]).removeAttr('height');
+	$(avatar[i]).removeAttr('width');
+
+	$(comentario[i]).append('<br><span class="small text-secondary">'+$(nombre[i]).html()+' | '+$(fecha[i]).html()+'</span>');
+
+	$(vcard[0]).css({"width":"98px"});
+}

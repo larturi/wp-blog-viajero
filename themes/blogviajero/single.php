@@ -183,45 +183,28 @@ CONTENIDO BLOG
 
 						<hr style="border: 1px solid #79FF39">
 
-						<div class="row opiniones">
-							
-							<div class="col-3 col-sm-4 col-lg-2 p-2">
-							
-								<img src="<?php echo get_template_directory_uri() . '/img/user01.jpg'; ?>" class="img-thumbnail">	
+						<?php
+						
+							$commentarios = get_comments(array(
+								'post_id' => $post->ID,
+								'status' => 'approve'
+							));
 
-							</div>
+							if( count($commentarios) > 0 ) {
+								wp_list_comments((array(
+									'per_page' => 10,
+								)), $commentarios);
+							} else {
+								echo '<p class="text-muted">No hay comentarios</p>';
+							}
 
-							<div class="col-9 col-sm-8 col-lg-10 p-2 text-muted">
-								
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae, aut sint provident dolorem minus recusandae facere, ipsum magnam, nostrum enim. Error quasi quod ab consectetur explicabo consequuntur obcaecati suscipit!</p>
-
-								<span class="small float-right">Carla Gómez | 20.09.2018</span>
-
-							</div>	
-
-							<div class="col-9 col-sm-8 col-lg-10 p-2 text-muted">
-								
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae, aut sint provident dolorem minus recusandae facere, ipsum magnam, nostrum enim. Error quasi quod ab consectetur explicabo consequuntur obcaecati suscipit!</p>
-
-								<span class="small float-right">Juanito Travel | 20.09.2018</span>
-
-							</div>
-
-							<div class="col-3 col-sm-4 col-lg-2 p-2">
-							
-								<img src="<?php echo get_template_directory_uri() . '/img/user02.jpg'; ?>" class="img-thumbnail">	
-
-							</div>
-
-						</div>
-
-						<hr style="border: 1px solid #79FF39">
+						?>
 
 						<!-- FORMULARIO DE OPINIONES -->
 
+						<?php comment_form(); ?>
+
 						<form>
-							
-							<label class="text-muted lead">¿Qué tal te pareció el artículo?</label>
 
 							<div class="row">
 								
