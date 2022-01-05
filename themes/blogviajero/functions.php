@@ -43,7 +43,7 @@ function blogviajero_setup() {
 add_action('after_setup_theme', 'blogviajero_setup');
 
 // Agregar Sidebar para widgets
-function blogviajero_widgets_index() {
+function blogviajero_widgets() {
     register_sidebar( array(
         'name'          => __( 'Widgets Index 1', 'blogviajero' ),
         'id'            => 'widgets-index-1',
@@ -63,5 +63,45 @@ function blogviajero_widgets_index() {
         'before_title'  => '<h3 style="display: none">',
         'after_title'   => '</h3>'
     ));
+
+    register_sidebar( array(
+        'name'          => __( 'Widgets Category 1', 'blogviajero' ),
+        'id'            => 'widgets-category-1',
+        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
+        'before_widget' => '<div class="widget3">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 style="display: none">',
+        'after_title'   => '</h3>'
+    ));
+
+    register_sidebar( array(
+        'name'          => __( 'Widgets Category 2', 'blogviajero' ),
+        'id'            => 'widgets-category-2',
+        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
+        'before_widget' => '<div class="widget3">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 style="display: none">',
+        'after_title'   => '</h3>'
+    ));
+
+    register_sidebar( array(
+        'name'          => __( 'Widgets Article 1', 'blogviajero' ),
+        'id'            => 'widgets-article-1',
+        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
+        'before_widget' => '<div class="widget5">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 style="display: none">',
+        'after_title'   => '</h3>'
+    ));
+
+    register_sidebar( array(
+        'name'          => __( 'Widgets Article 2', 'blogviajero' ),
+        'id'            => 'widgets-article-2',
+        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
+        'before_widget' => '<div class="widget6">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 style="display: none">',
+        'after_title'   => '</h3>'
+    ));
 }
-add_action('widgets_init', 'blogviajero_widgets_index');
+add_action('widgets_init', 'blogviajero_widgets');

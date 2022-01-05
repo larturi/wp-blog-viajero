@@ -4,18 +4,22 @@
 
      <!-- SOBRE MI -->
     <?php
-        if (is_active_sidebar('widgets-index-1')) {
-            dynamic_sidebar('widgets-index-1');
+
+        if (is_category()) {
+            if (is_active_sidebar('widgets-category-1')) {
+                dynamic_sidebar('widgets-category-1');
+            }
+        } elseif (is_single()) {
+            if (is_active_sidebar('widgets-article-1')) {
+                dynamic_sidebar('widgets-article-1');
+            }
+        } elseif (is_home()) {
+            if (is_active_sidebar('widgets-index-1')) {
+                dynamic_sidebar('widgets-index-1');
+            }
         }
+
     ?>
-    
-    <!-- PUBLICIDAD -->
-
-    <div class="my-4">
-
-        <img src="<?php echo get_template_directory_uri() . '/img/ad01.jpg'; ?>" class="img-fluid">
-
-    </div>
 
     <!-- COMENTARIOS RECIENTES -->
 
@@ -100,16 +104,20 @@
 
     <!-- PUBLICIDAD -->
 
-    <div class="my-4">
-
-        <img src="<?php echo get_template_directory_uri() . '/img/ad02.jpg'; ?>" class="img-fluid">
-
-    </div>
-
-    <div class="my-4">
-
-        <img src="<?php echo get_template_directory_uri() . '/img/ad02.jpg'; ?>" class="img-fluid">
-
-    </div>
+    <?php
+         if (is_category()) {
+            if (is_active_sidebar('widgets-category-2')) {
+                dynamic_sidebar('widgets-category-2');
+            }
+        } elseif (is_single()) {
+            if (is_active_sidebar('widgets-article-2')) {
+                dynamic_sidebar('widgets-article-2');
+            }
+        } elseif (is_home()) {
+            if (is_active_sidebar('widgets-index-2')) {
+                dynamic_sidebar('widgets-index-2');
+            }
+        }
+    ?>
 
 </div>
