@@ -727,3 +727,11 @@ MOVIL VERTICAL (revisamos en 320px)
 	
 }
 
+/*=============================================
+SIDEBAR
+=============================================*/
+.widget1{
+	width:100%;
+	height:auto;
+	margin-bottom:15px;
+}

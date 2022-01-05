@@ -41,3 +41,27 @@ function blogviajero_setup() {
     add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'blogviajero_setup');
+
+// Agregar Sidebar para widgets
+function blogviajero_widgets_index() {
+    register_sidebar( array(
+        'name'          => __( 'Widgets Index 1', 'blogviajero' ),
+        'id'            => 'widgets-index-1',
+        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
+        'before_widget' => '<div class="widget1">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 style="display: none">',
+        'after_title'   => '</h3>'
+    ));
+
+    register_sidebar( array(
+        'name'          => __( 'Widgets Index 2', 'blogviajero' ),
+        'id'            => 'widgets-index-2',
+        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
+        'before_widget' => '<div class="widget2">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 style="display: none">',
+        'after_title'   => '</h3>'
+    ));
+}
+add_action('widgets_init', 'blogviajero_widgets_index');
