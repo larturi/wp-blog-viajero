@@ -6,24 +6,24 @@
 <!--=====================================
 CONTENIDO BLOG
 ======================================-->
-<div class="container-fluid bg-white contenidoInicio pb-4">
+<div class="container-fluid bg-white pb-4">
 
     <div class="container">
 
-        <div class="row">
+        <?php if(have_posts()): ?>
+        
+            <?php while(have_posts()): the_post(); ?>
 
-            <!-- COLUMNA IZQUIERDA -->
+                <h1 class="py-4"><?php the_title(); ?></h1>
+                <hr class="mb-4 mb-lg-5" style="border: solid 1px gray;">
 
-            <div class="col-12 col-md-8 col-lg-9 p-0 pr-lg-5">
-                <h1>Sobre mi</h1>
-                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quis nihil voluptatem vitae beatae! Ratione sit quia repellat reprehenderit non aliquid distinctio dolorem excepturi in. Nulla quibusdam culpa tempora perferendis.</h3>
-            </div>
+                <?php the_content() ?>
 
-            <?php get_sidebar(); ?>
+            <?php endwhile; ?>
 
-        </div>
+        <?php endif; ?>
 
-    </div>
+    </div>    
 
 </div>
 

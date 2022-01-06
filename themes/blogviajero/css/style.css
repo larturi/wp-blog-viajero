@@ -735,3 +735,32 @@ SIDEBAR
 	height:auto;
 	margin-bottom:15px;
 }
+
+.textwidget img {
+	margin-bottom:0px;
+	width: 255px;
+}
+
+.articulos-recientes .text-recientes {
+	padding: 5px 10px;
+}
+
+.articulos-recientes .text-recientes p {
+	font-size: 14px;
+	height: 65px;
+	overflow: hidden;
+}
+
+.articulos-recientes .text-recientes::after {
+	position: relative;
+	content: "...";
+	top: -23px;
+}
+
+.articulos-recientes .img-recientes {
+	overflow: hidden;
+}
+.articulos-recientes .img-recientes img {
+	width: 500px !important;
+	height: 100px !important;
+}

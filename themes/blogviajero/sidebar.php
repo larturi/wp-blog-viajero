@@ -21,83 +21,63 @@
 
     ?>
 
-    <!-- COMENTARIOS RECIENTES -->
+    <!-- ARTICULOS RECIENTES -->
 
-    <div class="my-4">
+    <div class="my-4 articulos-recientes">
 
-        <h4>Comentarios Recientes</h4>
+        <h4>Articulos Recientes</h4>
 
-        <div class="d-flex my-3">
+        <?php
 
-            <div class="w-100 w-xl-50 pr-3 pt-2">
+            if (is_category()) {
+                $cat = get_query_var('cat');
+                $categoria = get_category($cat)->slug;
+            } elseif (is_single()) {
+                global $post;
+                $categoryId = get_the_category($post->ID);
+                $categoria = get_category($categoryId[0]->cat_ID)->slug;
+            } elseif (is_home()) {
+                $categoria = "";
+            }
 
-                <a href="articulos.html">
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'category_name' => $categoria,
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'post__not_in' => array($post->ID)
+            );
 
-                    <img src="<?php echo get_template_directory_uri() . '/img/com01.jpg'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+            $secondary_query = new WP_Query($args);
 
-                </a>
+			while ( $secondary_query->have_posts() ):$secondary_query->the_post();
 
-            </div>
+        ?>
 
-            <div>
+            <div class="d-flex my-3">
 
-                <a href="articulos.html" class="text-secondary">
+                <div class="w-100 w-xl-50 pr-3 pt-2 img-recientes">
 
-                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a href="<?php the_permalink(); ?>">
+                        <?php the_post_thumbnail('thumbnail'); ?>
+                    </a>
 
-                </a>
+                </div>
 
-            </div>
+                <div class="text-recientes">
 
-        </div>
+                    <a href="<?php the_permalink(); ?>" class="text-secondary">
 
-        <div class="d-flex my-3">
+                        <small><?php the_excerpt(); ?></small>
+                            
+                    </a>
 
-            <div class="w-100 w-xl-50 pr-3 pt-2">
-
-                <a href="articulos.html">
-
-                    <img src="<?php echo get_template_directory_uri() . '/img/com02.jpg'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-
-                </a>
-
-            </div>
-
-            <div>
-
-                <a href="articulos.html" class="text-secondary">
-
-                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="d-flex my-3">
-
-            <div class="w-100 w-xl-50 pr-3 pt-2">
-
-                <a href="articulos.html">
-
-                    <img src="<?php echo get_template_directory_uri() . '/img/com03.jpg'; ?>" alt="Lorem ipsum dolor sit amet" class="img-fluid">
-
-                </a>
+                </div>
 
             </div>
 
-            <div>
-
-                <a href="articulos.html" class="text-secondary">
-
-                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-                </a>
-
-            </div>
-
-        </div>
+        <?php endwhile; ?>
 
 
     </div>
