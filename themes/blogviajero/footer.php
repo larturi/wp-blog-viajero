@@ -88,43 +88,15 @@ FOOTER
 
                 </div>
 
-                <div class="p-0 w-100 pt-2">
-
-                    <ul class="d-flex justify-content-left p-0">
-
-                        <li>
-                            <a href="https://www.facebook.com" target="_blank">
-                                <i class="fab fa-facebook-f lead text-white mr-3 mr-sm-4"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-instagram lead text-white mr-3 mr-sm-4"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-twitter lead text-white mr-3 mr-sm-4"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-youtube lead text-white mr-3 mr-sm-4"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-snapchat-ghost lead text-white mr-3 mr-sm-4"></i>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
+                <?php
+                    wp_nav_menu(array(
+                        "theme_location" => "social-menu",
+                        "container" => "div",
+                        "container_class" => "p-0 w-100 pt-2 redesFooter",
+                        "items_wrap" => '<ul class="d-flex justify-content-left p-0">%3$s</ul>',
+                        "menu_class" => "nav-item",
+                    ));
+                ?>
 
             </div>
 

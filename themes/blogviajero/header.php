@@ -13,7 +13,7 @@
 
 <body>
 
-    <!--=====================================
+<!--=====================================
 PRELOAD
 ======================================-->
 
@@ -31,7 +31,7 @@ PRELOAD
 
     </div>
 
-    <!--=====================================
+<!--=====================================
 CABECERA
 ======================================-->
 
@@ -61,10 +61,6 @@ CABECERA
                 <!-- REDES SOCIALES -->
 
                 <?php
-                    // if(is_active_sidebar('widgets-redes-sociales')){
-                    //     dynamic_sidebar('widgets-redes-sociales');
-                    // }
-
                     wp_nav_menu(array(
                         "theme_location" => "social-menu",
                         "container" => "div",
@@ -73,14 +69,7 @@ CABECERA
                         "menu_class" => "nav-item",
                     ));
                 ?>
-<!-- 
-                <div class="d-none d-md-block col-md-2 col-lg-2 redes">
 
-                    <ul class="d-flex justify-content-end pt-2 mt-1">
-
-                    </ul>
-
-                </div> -->
 
                 <!-- BUSCADOR Y BOTÓN MENÚ -->
                 <div class="col-2 col-sm-1 col-md-2 col-lg-2 d-flex justify-content-end pt-2 mt-1">
@@ -125,44 +114,16 @@ CABECERA
 
     </header>
 
-    <!--=====================================
+<!--=====================================
 REDES SOCIALES PARA MÓVIL
 ======================================-->
 
-    <div class="d-block d-md-none redes redesMovil p-0 bg-white w-100 pt-2">
-
-        <ul class="d-flex justify-content-center p-0">
-
-            <li>
-                <a href="https://www.facebook.com" target="_blank">
-                    <i class="fab fa-facebook-f lead rounded-circle text-white mr-3 mr-sm-4"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="#" target="_blank">
-                    <i class="fab fa-instagram lead rounded-circle text-white mr-3 mr-sm-4"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="#" target="_blank">
-                    <i class="fab fa-twitter lead rounded-circle text-white mr-3 mr-sm-4"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="#" target="_blank">
-                    <i class="fab fa-youtube lead rounded-circle text-white mr-3 mr-sm-4"></i>
-                </a>
-            </li>
-
-            <li>
-                <a href="#" target="_blank">
-                    <i class="fab fa-snapchat-ghost lead rounded-circle text-white mr-3 mr-sm-4"></i>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
+<?php
+    wp_nav_menu(array(
+        "theme_location" => "social-menu",
+        "container" => "div",
+        "container_class" => "d-block d-md-none redesMovil p-0 bg-white w-100 pt-2 redes",
+        "items_wrap" => '<ul class="d-flex justify-content-center">%3$s</ul>',
+        "menu_class" => "nav-item",
+    ));
+?>
