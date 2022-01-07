@@ -28,8 +28,9 @@ header{
 	background: rgba(0,0,0,.5);
 }
 
-header .logotipo{
+header .logotipo img {
 	width:45%;
+	height:auto;
 }
 
 .redes ul li i{
@@ -463,8 +464,9 @@ TABLET VERTICAL (MD revisamos en 768px)
 
 @media (max-width:991px) and (min-width:768px){
 
-	header .logotipo{
+	header .logotipo img {
 		width:55%;
+		height:auto;
 	}
 
 	.btnClose{
@@ -544,8 +546,9 @@ MÓVIL HORIZONTAL (SM revisamos en 576px)
 
 @media (max-width:767px) and (min-width:576px){
 
-	header .logotipo{
+	header .logotipo img {
 		width:65%;
+		height:auto;
 	}
 
 	.fade-slider{
@@ -631,8 +634,9 @@ MOVIL VERTICAL (revisamos en 320px)
 
 @media (max-width:575px){
 
-	header .logotipo{
+	header .logotipo img {
 		width:100%;
+		height:auto;
 	}
 
 	.fade-slider{

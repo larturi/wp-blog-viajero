@@ -7,10 +7,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Travel Blog</title>
-
-    <link rel="icon" href="<?php echo get_template_directory_uri() . '/img/icono.jpg'; ?>">
-
     <?php wp_head(); ?>
 
 </head>
@@ -46,11 +42,17 @@ CABECERA
             <div class="row">
 
                 <!-- LOGO -->
-                <div class="col-10 col-sm-11 col-md-8 col-lg-7 pt-1 pt-lg-3 p-xl-0">
+                <div class="col-10 col-sm-11 col-md-8 col-lg-7 pt-1 pt-lg-3 p-xl-0 logotipo">
 
-                    <a href="index.html">
+                    <a href="<?php echo esc_url(home_url("/")); ?>">
 
-                        <img src="<?php echo get_template_directory_uri() . '/img/logotipo-negativo.png'; ?>" alt="Logo de Juanito Travel" class="img-fluid logotipo">
+                        <?php
+                            if (function_exists('the_custom_logo')) {
+                                the_custom_logo();
+                            } else {
+                                echo '<img src="' . get_template_directory_uri() . '/img/logo.jpg" class="img-fluid" alt="Logo">';
+                            }
+                        ?>
 
                     </a>
 
