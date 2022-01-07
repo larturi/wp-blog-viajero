@@ -59,55 +59,40 @@ CABECERA
                 </div>
 
                 <!-- REDES SOCIALES -->
+
+                <?php
+                    // if(is_active_sidebar('widgets-redes-sociales')){
+                    //     dynamic_sidebar('widgets-redes-sociales');
+                    // }
+
+                    wp_nav_menu(array(
+                        "theme_location" => "social-menu",
+                        "container" => "div",
+                        "container_class" => "d-none d-md-block col-md-2 col-lg-2 redes",
+                        "items_wrap" => '<ul class="d-flex justify-content-end pt-2 mt-1">%3$s</ul>',
+                        "menu_class" => "nav-item",
+                    ));
+                ?>
+<!-- 
                 <div class="d-none d-md-block col-md-2 col-lg-2 redes">
 
                     <ul class="d-flex justify-content-end pt-2 mt-1">
 
-                        <li>
-                            <a href="https://www.facebook.com" target="_blank">
-                                <i class="fab fa-facebook-f lead rounded-circle text-white mr-1"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-instagram lead rounded-circle text-white mr-1"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-twitter lead rounded-circle text-white mr-1"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-youtube lead rounded-circle text-white mr-1"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" target="_blank">
-                                <i class="fab fa-snapchat-ghost lead rounded-circle text-white mr-1"></i>
-                            </a>
-                        </li>
-
                     </ul>
 
-                </div>
+                </div> -->
 
                 <!-- BUSCADOR Y BOTÓN MENÚ -->
                 <div class="col-2 col-sm-1 col-md-2 col-lg-2 d-flex justify-content-end pt-2 mt-1">
 
                     <!-- BUSCADOR -->
                     <div class="d-none d-md-block pr-4 pr-lg-5 mt-1">
-                        <i class="fas fa-search lead" data-toggle="collapse" data-target="#buscador"></i>
+                        <i class="fas fa-search lead" style="margin-top: 13px;" data-toggle="collapse" data-target="#buscador"></i>
                     </div>
 
                     <!-- BOTÓN MENÚ -->
                     <div class="m-0 mt-sm-1 mt-md-0 pr-0 pr-sm-2 pr-lg-3">
-                        <i class="fas fa-bars lead"></i>
+                        <i class="fas fa-bars lead" style="margin-top: 9px;"></i>
                     </div>
 
                 </div>

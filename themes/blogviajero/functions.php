@@ -27,7 +27,8 @@ add_action('wp_enqueue_scripts', 'blogviajero_includes');
 // https://developer.wordpress.org/themes/basics/theme-functions/
 function blogviajero_setup() {
     register_nav_menus(array(
-        'header-menu'   => __( 'Header Menu', 'blogviajero' )
+        'header-menu'   => __( 'Header Menu', 'blogviajero' ),
+        'social-menu'   => __( 'Social Menu', 'blogviajero' )
     ));
 
     add_filter('nav_menu_link_attributes', 'agregarClases', 10, 3); 
@@ -51,7 +52,6 @@ function blogviajero_widgets() {
     register_sidebar( array(
         'name'          => __( 'Widgets Index 1', 'blogviajero' ),
         'id'            => 'widgets-index-1',
-        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
         'before_widget' => '<div class="widget1">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 style="display: none">',
@@ -61,7 +61,6 @@ function blogviajero_widgets() {
     register_sidebar( array(
         'name'          => __( 'Widgets Index 2', 'blogviajero' ),
         'id'            => 'widgets-index-2',
-        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
         'before_widget' => '<div class="widget2">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 style="display: none">',
@@ -71,7 +70,6 @@ function blogviajero_widgets() {
     register_sidebar( array(
         'name'          => __( 'Widgets Category 1', 'blogviajero' ),
         'id'            => 'widgets-category-1',
-        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
         'before_widget' => '<div class="widget3">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 style="display: none">',
@@ -81,7 +79,6 @@ function blogviajero_widgets() {
     register_sidebar( array(
         'name'          => __( 'Widgets Category 2', 'blogviajero' ),
         'id'            => 'widgets-category-2',
-        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
         'before_widget' => '<div class="widget3">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 style="display: none">',
@@ -91,7 +88,6 @@ function blogviajero_widgets() {
     register_sidebar( array(
         'name'          => __( 'Widgets Article 1', 'blogviajero' ),
         'id'            => 'widgets-article-1',
-        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
         'before_widget' => '<div class="widget5">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 style="display: none">',
@@ -101,8 +97,16 @@ function blogviajero_widgets() {
     register_sidebar( array(
         'name'          => __( 'Widgets Article 2', 'blogviajero' ),
         'id'            => 'widgets-article-2',
-        'description'   => __( 'Agrega widgets aquí', 'blogviajero' ),
         'before_widget' => '<div class="widget6">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 style="display: none">',
+        'after_title'   => '</h3>'
+    ));
+
+    register_sidebar( array(
+        'name'          => __( 'Widgets Redes Sociales', 'blogviajero' ),
+        'id'            => 'widgets-redes-sociales',
+        'before_widget' => '<div class="socials">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 style="display: none">',
         'after_title'   => '</h3>'
